@@ -3,7 +3,7 @@ name: Check today
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 9 * * *'
+    - cron: '0 15 * * *'
 
 jobs:
   build:
