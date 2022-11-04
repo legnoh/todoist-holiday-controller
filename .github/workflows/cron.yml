@@ -19,7 +19,7 @@ jobs:
         cache: pipenv
     - name: Install dependencies
       run: pipenv install
-    - name: Run Gathering Asken Data
+    - name: Execute
       run: pipenv run main
       env:
         TODOIST_API_KEY: ${{ secrets.TODOIST_API_KEY }}
