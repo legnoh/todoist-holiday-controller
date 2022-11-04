@@ -1,0 +1,5 @@
+---
+skip_tasks:
+  - project_name: 1day
+    tasks:
+    - 5070117558

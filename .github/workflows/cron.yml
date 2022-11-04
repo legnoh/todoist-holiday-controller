@@ -1,0 +1,26 @@
+name: Check today
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 9 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check Out Repo 
+      uses: actions/checkout@v3
+    - name: Install pipenv
+      run: pipx install pipenv
+    - name: Setup Python
+      uses: actions/setup-python@v3
+      with:
+        cache: pipenv
+    - name: Install dependencies
+      run: pipenv install
+    - name: Run Gathering Asken Data
+      run: pipenv run main
+      env:
+        TODOIST_API_KEY: ${{ secrets.TODOIST_API_KEY }}
+        TZ: Asia/Tokyo
