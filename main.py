@@ -18,7 +18,7 @@ else:
     print("today is workday")
     td.disable_vacation()
 
-if not jpholiday.is_holiday(today):
+if jpholiday.is_holiday(today):
     print("today is a holiday")
     td.enable_vacation()
 
